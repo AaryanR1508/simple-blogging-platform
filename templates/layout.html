@@ -9,12 +9,33 @@
         Simple Blog
         {% endblock %}
     </title>
+    <link rel="icon" href="{% static 'images/blog-icon.ico' %}" type="image/x-icon">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <script src="{% static 'js/main.js' %}" defer></script>
 </head>
 <body>
-    <nav>
+    <nav style="display: flex; justify-content: space-between; align-items: center; padding: 10px;">
+    <!-- Left side: logo + posts -->
+    <div>
+        <a href="/"><img src="/media/blog-icon.ico" alt="Icon" width="32" height="32"> Simple Blog</a> |
+        <a href="{% url 'blog:list' %}"><span title="Posts">Posts</span></a>
+        {% if user.is_authenticated %}
+            | <a href="{% url 'blog:new-post' %}"><span title='New Post'>New Post</span></a>
+        {% endif %}
+    </div>
 
+    <!-- Right side: login/logout -->
+    <div>
+        {% if user.is_authenticated %}
+            <form class="logout" action="{% url 'accounts:logout' %}" method="post" style="display: inline;">
+                {% csrf_token %}
+                <button class="logout-button" title="User-Logout">Logout</button>
+            </form>
+        {% else %}
+            <a href="{% url 'accounts:register' %}"><span title='User Registeration'>Register</span></a> |
+            <a href="{% url 'accounts:login' %}"><span title='User Login'>Login</span></a>
+        {% endif %}
+    </div>
     </nav>
     <main>
         {% block content %}

@@ -13,7 +13,7 @@ class Tag(models.Model):
 class Post(models.Model):
     title = models.CharField(max_length=60)
     body = models.TextField()
-    slug = models.SlugField()
+    slug = models.SlugField(unique=True)
     date = models.DateTimeField(auto_now_add=True)
     author = models.ForeignKey(User, on_delete = models.CASCADE)
     tags = models.ManyToManyField(Tag, related_name="posts")
