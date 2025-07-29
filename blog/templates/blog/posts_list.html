@@ -1,6 +1,6 @@
 {% extends 'layout.html' %}
 
-{% block title %} Post {% endblock %}
+{% block title %} Posts {% endblock %}
 
 {% block content %}
 <h1 style="text-align:center">Posts</h1>
@@ -9,7 +9,11 @@
     <article class="post">
         <h2>{{ post.title }}</h2>
         <p> {{ post.date }} | By {{ post.author}}</p>
-
+        {% for tag in post.tags.all %}
+        <span class="tag">{{ tag }}</span>{% if not forloop.last %}, {% endif %}
+        {% empty %}
+        <span>No tags</span>
+        {% endfor %}
         <p> {{ post.body|truncatechars:150 }}</p>
         <a style="font-size:1.5rem;padding-left:10px;" href="{% url 'blog:post_detail' post.slug %}">Read More →</a>
     </article>

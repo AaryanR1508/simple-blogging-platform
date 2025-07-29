@@ -13,6 +13,6 @@ def post_detail(request, slug):
     post = get_object_or_404(Post, slug=slug)
     return render(request, 'blog/post_detail.html', {'post': post})
 
-@login_required(login_url="/users/login/")
+@login_required(login_url="/accounts/login/")
 def post_new(request):
     return render(request, "blog/post_new.html")
