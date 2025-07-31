@@ -16,5 +16,28 @@
   <div class="post-body">
     {{ post.body|linebreaks }}
   </div>
+  <div class="comment-form-section">
+    <h3>Leave a Comment</h3>
+    {% if user.is_authenticated %}
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.body }}
+            <button type="submit">Post Comment</button>
+        </form>
+    {% else %}
+        <p><a href="{% url 'login' %}">Log in</a> to leave a comment.</p>
+    {% endif %}
+  </div>
+  <div class="comment-section">
+     {% for comment in post.comments.all %}
+        <div class="comment">
+            <div class="comment-author">{{ comment.user.username }}</div>
+            <div class="comment-body">{{ comment.body }}</div>
+            <div class="comment-timestamp">{{ comment.created_at|date:"M d, Y H:i" }}</div>
+        </div>
+    {% empty %}
+        <p>No comments yet. Be the first!</p>
+    {% endfor %}
+  </div>
 </div>
 {% endblock %}

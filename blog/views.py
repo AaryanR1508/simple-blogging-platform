@@ -12,7 +12,24 @@ def posts_list(request):
 
 def post_detail(request, slug):
     post = get_object_or_404(Post, slug=slug)
-    return render(request, 'blog/post_detail.html', {'post': post})
+    comments = post.comments.all().order_by('-created_at')
+
+    if request.method == "POST":
+        form = forms.CreateComment(request.POST)
+        if form.is_valid():
+            comment = form.save(commit=False)
+            comment.post = post
+            comment.user = request.user
+            comment.save()
+            return redirect('blog:post-detail', slug=slug)
+    else:
+        form = forms.CreateComment()
+
+    return render(request, 'blog/post_detail.html', {
+        'post': post,
+        'comments': comments,
+        'form': form,
+    })
 
 @login_required(login_url="/accounts/login/")
 def post_new(request):

@@ -9,7 +9,7 @@ class CreatePost(forms.ModelForm):
 
     class Meta:
         model = models.Post
-        fields = ['title', 'body', 'slug']  # don't use tags directly
+        fields = ['title', 'body', 'slug']
 
     def save(self, commit=True, user=None):
         post = super().save(commit=False)
@@ -28,3 +28,15 @@ class CreatePost(forms.ModelForm):
 
         post.tags.set(tag_objs)
         return post
+    
+class CreateComment(forms.ModelForm):
+    class Meta:
+        model = models.Comment
+        fields = ['body']
+        widgets = {
+            'body': forms.Textarea(attrs={
+                'class': 'comment-input',
+                'placeholder': 'Add a comment...',
+                'rows': 3,
+            })
+        }
