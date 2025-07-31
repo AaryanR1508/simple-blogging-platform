@@ -7,8 +7,16 @@ from . import forms
 # Create your views here.
 
 def posts_list(request):
-    posts=Post.objects.all().order_by('-date')
-    return render(request, 'blog/posts_list.html', {'posts':posts})
+    posts = Post.objects.all().order_by('-date')
+    tag = request.GET.get('tag')
+    if tag:
+        posts = posts.filter(tags__name__iexact=tag)
+
+    return render(request, 'blog/posts_list.html', {
+        'posts': posts,
+        'active_tag': tag,
+        'request': request
+    })
 
 def post_detail(request, slug):
     post = get_object_or_404(Post, slug=slug)

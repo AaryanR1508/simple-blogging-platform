@@ -4,18 +4,26 @@
 
 {% block content %}
 <h1 style="text-align:center">Posts</h1>
+{% if active_tag %}
+        <div class="active-tag-banner">
+        Filtering by tag: <span class="tag-name">{{ active_tag }}</span>
+        <a href="{{ request.path }}" class="clear-filter">(clear)</a>
+        </div>
+    {% endif %}
 <div class="posts">
     {% for post in posts %}
     <article class="post">
         <h2>{{ post.title }}</h2>
         <p> {{ post.date }} | By {{ post.author}}</p>
+        <div class="tags-container">
         {% for tag in post.tags.all %}
-        <span class="tag">{{ tag }}</span>{% if not forloop.last %} {% endif %}
+            <span class="tag"><a href="{{ request.path }}?tag={{ tag }}">{{ tag }}</a></span>
         {% empty %}
-        <span class="tag">No tags</span>
+            <span class="tag">no tags</span>
         {% endfor %}
-        <p> {{ post.body|truncatechars:150 }}</p>
-        <a style="font-size:1.5rem;padding-left:10px;" href="{% url 'blog:post_detail' post.slug %}">Read More →</a>
+        </div>
+        <p> {{ post.body|truncatechars:100 }}</p>
+        <a href="{% url 'blog:post-detail' post.slug %}">Read More →</a>
     </article>
     {% endfor %}
 </div>

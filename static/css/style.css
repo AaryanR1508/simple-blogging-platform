@@ -4,82 +4,88 @@
     box-sizing: border-box;
 }
 
+.wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
 /* Body & Base Typography */
 body {
     min-height: 100vh;
-    background-color: #1e1e1e; /* Darker background for more contrast */
-    color: #e0e0e0; /* Softer white for better readability on dark background */
-    font-family: 'Open Sans', sans-serif; /* Using Open Sans for body */
-    font-size: 1rem; /* Base font size, 'rem' is better for scaling */
-    line-height: 1.6; /* Good line height for readability */
+    background-color: #1A202C; /* Changed */
+    color: #E2E8F0; /* Changed */
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    height: 100%;
 }
 
 /* Headings */
-h1, h2, h3, h4, h5, h6 { /* Apply to all headings for consistency */
-    font-family: 'Roboto Slab', serif; /* Roboto Slab for headings */
-    color: #81dbb8; /* Your accent color */
-    margin-top: 1.5em; /* Spacing above headings */
-    margin-bottom: 0.8em; /* Spacing below headings */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Roboto Slab', serif;
+    color: #4FD1C5; /* Changed */
+    margin-top: 1.5em;
+    margin-bottom: 0.8em;
 }
 
-/* Specific heading sizes for hierarchy */
-h1 { /* Main page title (e.g., "Posts") */
+h1 {
     font-size: 2.8rem;
     font-weight: 700;
-    text-align: center; /* Center the main page title */
-    margin-top: 2.5rem; /* More space above */
-    margin-bottom: 2rem; /* More space below */
-    letter-spacing: 0.05em; /* Slightly spaced out for prominence */
+    text-align: center;
+    margin-top: 2.5rem;
+    margin-bottom: 2rem;
+    letter-spacing: 0.05em;
 }
 
-h2 { /* Post titles within cards */
-    font-size: 1.8rem; /* Adjusted for post titles */
+h2 {
+    font-size: 1.8rem;
     font-weight: 600;
-    margin-top: 0; /* Reset default margin for card headings */
+    margin-top: 0;
     margin-bottom: 0.5rem;
-    color: #ffffff; /* Make post titles stark white for impact */
+    color: #FFFFFF; /* Kept white for high impact, can be changed to #E2E8F0 */
 }
 
 /* Paragraphs */
 p {
-    font-size: 1rem; /* Consistent with body font size */
-    padding: 0; /* Remove padding here, apply margin-bottom instead */
-    margin-bottom: 1em; /* Space between paragraphs */
+    font-size: 1rem;
+    padding: 0;
+    margin-bottom: 1em;
 }
 
 /* Main Content Area Container */
 main {
-    padding: 1rem 0; /* Remove horizontal padding here */
-    max-width: 1200px; /* Constrain content width */
-    margin: 0 auto; /* Center the main content */
+    padding: 1rem 0;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex: 1;
 }
 
 /* --- Navigation Bar --- */
 nav {
     position: relative;
-    background-color: #2F4F4F;
+    background-color: #2D3748; /* Changed */
     color: white;
-    padding: 1rem 2rem; /* Adjusted padding */
-    display: flex; /* Use flexbox for layout */
-    justify-content: space-between; /* Keeps brand left, auth-links right */
-    align-items: center; /* Vertically align items */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Subtle shadow for depth */
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
 /* Style for the "Simple Blog" brand/logo */
 .brand {
     font-size: 1.6rem;
     font-weight: 600;
-    color: #81dbb8; /* Accent color for brand */
+    color: #4FD1C5; /* Changed */
     text-decoration: none;
-    display: flex; /* Make brand a flex container to align icon and text */
-    align-items: center; /* Vertically align icon and text */
-    gap: 8px; /* Space between icon and text */
-    /* margin-right: auto; REMOVED from here, as space-between on nav does the job for left-most item */
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
 .brand img {
-    vertical-align: middle; /* Ensures image aligns with text baseline */
+    vertical-align: middle;
 }
 
 /* Container for Posts, New Post links */
@@ -94,53 +100,52 @@ nav {
 /* Container for Login/Logout/Register links */
 .auth-links {
     display: flex;
-    align-items: center; /* Vertically align items within this container */
-    gap: 15px; /* Space between Login | Register, and Logout button */
-    /* margin-left: auto; REMOVED from here, as space-between on nav does the job for right-most item */
+    align-items: center;
+    gap: 15px;
 }
 
 /* Styling for all common navigation links (Posts, New Post, Register, Login) */
 .nav-links a,
 .auth-links a {
-    color: #81dbb8;
+    color: #4FD1C5; /* Changed */
     text-decoration: none;
-    font-size: 1.1rem; /* Consistent nav link size */
-    padding: 5px 0; /* Add vertical padding for larger hover area */
-    transition: color 0.3s ease; /* Smooth hover effect */
+    font-size: 1.1rem;
+    padding: 5px 0;
+    transition: color 0.3s ease;
 }
 
 .nav-links a:hover,
 .auth-links a:hover {
-    color: #b0e8d0; /* Lighter shade on hover */
+    color: #81E6D9; /* Changed */
 }
 
 /* Style for the separator " | " */
 .auth-divider {
-    color: #a0a0a0; /* Muted color for the separator */
-    font-size: 1.1rem; /* Match link font size */
+    color: #A0AEC0; /* Changed */
+    font-size: 1.1rem;
 }
 
 /* Specific style for logout button */
 .logout-button {
-    font-size: 1.1rem; /* Consistent with other nav links */
-    color: #81dbb8;
-    background-color: transparent; /* No background */
+    font-size: 1.1rem;
+    color: #4FD1C5; /* Changed */
+    background-color: transparent;
     border: none;
     cursor: pointer;
-    padding: 5px 10px; /* Add padding to make button more clickable */
-    border-radius: 5px; /* Subtle rounded corners for the button */
+    padding: 5px 10px;
+    border-radius: 5px;
     transition: color 0.3s ease, background-color 0.3s ease;
 }
 
 .logout-button:hover {
-    color: #b0e8d0;
-    background-color: rgba(129, 219, 184, 0.1); /* Light background on hover */
+    color: #81E6D9; /* Changed */
+    background-color: rgba(79, 209, 197, 0.1); /* Changed */
 }
 
 /* Posts Grid */
 .posts {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 25px;
     padding: 20px;
     max-width: 1200px;
@@ -148,64 +153,82 @@ nav {
 }
 
 .post {
-    background: #2e514f;
+    background: #2D3748; /* Changed */
     padding: 25px;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.3);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    max-width: 400px;
+    word-wrap: break-word; /* Ensures long words break */
+    overflow-wrap: break-word; /* Modern version of word-wrap */
+    white-space: normal; /* Allows text to wrap */
 }
 
 /* Link Styling (General) */
 a {
     text-decoration: none;
-    color: #81dbb8;
+    color: #4FD1C5; /* Changed */
     font-size: 1rem;
     padding: 0;
     transition: color 0.3s ease, opacity 0.3s ease;
 }
 
 a:hover {
-    color: #b0e8d0;
+    color: #81E6D9; /* Changed */
     opacity: 1;
 }
 
 /* "Read More" link within posts */
 .post a {
+    font-size: 1rem;
     margin-top: auto;
     font-weight: 500;
 }
 
 /* Tag Styling */
 .tag {
-    background-color: rgba(129, 219, 184, 0.15);
-    color: #81dbb8;
+    background-color: rgba(79, 209, 197, 0.15); /* Changed */
+    color: #4FD1C5; /* Changed */
     padding: 6px 12px;
     margin-right: 8px;
     margin-bottom: 8px;
     border-radius: 20px;
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     text-transform: lowercase;
-    display: inline-block;
     font-weight: 600;
+    width: fit-content;
+}
+
+.tag a {
+    color: inherit;
+    font-size: inherit;
+    text-decoration: none;
+}
+
+.tags-container {
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-top: 2px;
+    padding-bottom: 15px;
 }
 
 /* Post Meta (Date | By Author) */
 .post-meta {
     font-size: 0.85rem;
-    color: #a0a0a0;
+    color: #A0AEC0; /* Changed */
     margin-bottom: 1rem;
     padding-left: 0;
 }
 
 /* Single Post Page Container */
 .post-container {
-    max-width: 800px;
+    max-width: 1200px;
     margin: 40px auto;
     padding: 30px;
-    background-color: #2F4F4F;
-    color: #f0f0f0;
+    background-color: #2D3748; /* Changed */
+    color: #E2E8F0; /* Changed */
     border-radius: 12px;
     box-shadow: 0 0 20px rgba(0,0,0,0.5);
 }
@@ -213,7 +236,7 @@ a:hover {
 .post-title {
     font-size: 2.5rem;
     margin-bottom: 15px;
-    color: #ffffff;
+    color: #FFFFFF;
     font-weight: 700;
 }
 
@@ -221,6 +244,9 @@ a:hover {
     font-size: 1.15rem;
     line-height: 1.8;
     word-spacing: 1px;
+    word-wrap: break-word; /* Ensures long words break */
+    overflow-wrap: break-word; /* Modern version of word-wrap */
+    white-space: normal; /* Allows text to wrap */
 }
 
 .post-body p {
@@ -237,14 +263,36 @@ a:hover {
     border-radius: 8px;
 }
 
+.active-tag-banner {
+    margin-bottom: 20px;
+    padding: 10px 16px;
+    background-color: #2D3748; /* Changed */
+    border-left: 5px solid #4FD1C5; /* Changed */
+    border-radius: 6px;
+    color: #E2E8F0; /* Changed */
+    font-size: 1.1em;
+}
+
+.clear-filter {
+    margin-left: 12px;
+    color: #E53E3E; /* Changed */
+    font-size: 0.95em;
+    text-decoration: none;
+}
+
+.clear-filter:hover {
+    text-decoration: underline;
+}
+
+/* --- Comments --- */
 .comment-section {
     margin-top: 40px;
-    border-top: 1px solid #ccc;
+    border-top: 1px solid #4A5568; /* Changed */
     padding-top: 20px;
 }
 
 .comment {
-    background-color: #3B5F5F;
+    background-color: #1A202C; /* Changed */
     padding: 15px 20px;
     margin-bottom: 20px;
     border-radius: 10px;
@@ -253,25 +301,25 @@ a:hover {
 
 .comment-author {
     font-weight: bold;
-    color: #90EE90;  /* Light green for usernames */
+    color: #4FD1C5; /* Changed */
     margin-bottom: 6px;
 }
 
 .comment-body {
-    color: #e0e0e0;
+    color: #E2E8F0; /* Changed */
     line-height: 1.6;
 }
 
 .comment-timestamp {
     font-size: 0.85em;
-    color: #aaa;
+    color: #A0AEC0; /* Changed */
     margin-top: 8px;
 }
 
 .comment-form-section {
     margin-top: 30px;
     padding-top: 20px;
-    border-top: 1px solid #666;
+    border-top: 1px solid #4A5568; /* Changed */
 }
 
 .comment-form-section h3 {
@@ -281,23 +329,23 @@ a:hover {
 
 .comment-input {
     width: 100%;
-    background-color: #4b7070;
+    background-color: #2D3748; /* Changed */
     border: none;
     padding: 12px;
     border-radius: 8px;
-    color: #f0f0f0;
+    color: #E2E8F0; /* Changed */
     font-size: 1em;
-    resize: vertical;
+    resize: none; /* Make comment body non-resizeable */
     margin-bottom: 10px;
 }
 
 .comment-input::placeholder {
-    color: #ccc;
+    color: #A0AEC0; /* Changed */
 }
 
 .comment-form-section button {
-    background-color: #90EE90;
-    color: #1e1e1e;
+    background-color: #4FD1C5; /* Changed */
+    color: #1A202C; /* Changed */
     padding: 8px 16px;
     border: none;
     border-radius: 6px;
@@ -307,10 +355,10 @@ a:hover {
 }
 
 .comment-form-section button:hover {
-    background-color: #76d176;
+    background-color: #38B2AC; /* Slightly darker teal for hover */
 }
 
-/* Form Styles (New Post, Login, etc.) */
+/* --- Forms --- */
 .form-with-validation {
     font-size: 1rem;
     padding: 2rem;
@@ -318,11 +366,11 @@ a:hover {
     flex-flow: column;
     gap: 1.5rem;
     max-width: 600px;
-    background-color: #2e514f;
+    background-color: #2D3748; /* Changed */
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.3);
     margin: 40px auto;
-    color: #e0e0e0;
+    color: #E2E8F0; /* Changed */
 }
 
 .form-with-validation div {
@@ -333,7 +381,7 @@ a:hover {
 
 .form-with-validation label {
     font-weight: 600;
-    color: #81dbb8;
+    color: #4FD1C5; /* Changed */
 }
 
 .form-with-validation input[type="text"],
@@ -341,10 +389,10 @@ a:hover {
 .form-with-validation input[type="email"],
 .form-with-validation textarea {
     padding: 0.75rem 1rem;
-    background-color: #1a3232;
-    border: 1px solid #555;
+    background-color: #1A202C; /* Changed */
+    border: 1px solid #4A5568; /* Changed */
     border-radius: 5px;
-    color: #e0e0e0;
+    color: #E2E8F0; /* Changed */
     font-size: 1rem;
     width: 100%;
     max-width: 400px;
@@ -355,8 +403,8 @@ a:hover {
 .form-with-validation input[type="email"]:focus,
 .form-with-validation textarea:focus {
     outline: none;
-    border-color: #81dbb8;
-    box-shadow: 0 0 0 3px rgba(129, 219, 184, 0.3);
+    border-color: #4FD1C5; /* Changed */
+    box-shadow: 0 0 0 3px rgba(79, 209, 197, 0.3); /* Changed */
 }
 
 .form-submit {
@@ -364,8 +412,8 @@ a:hover {
     border-radius: 8px;
     width: auto;
     align-self: flex-start;
-    background-color: #81dbb8;
-    color: #1e1e1e;
+    background-color: #4FD1C5; /* Changed */
+    color: #1A202C; /* Changed */
     border: none;
     font-size: 1.1rem;
     font-weight: 600;
@@ -374,14 +422,14 @@ a:hover {
 }
 
 .form-submit:hover {
-    background-color: #b0e8d0;
+    background-color: #81E6D9; /* Changed */
     transform: translateY(-2px);
 }
 
 .helptext {
     font-size: 0.9rem;
     margin-left: 0;
-    color: #a0a0a0;
+    color: #A0AEC0; /* Changed */
 }
 
 .helptext ul {
@@ -390,7 +438,7 @@ a:hover {
 }
 
 .errorlist {
-    color: #ff6b6b;
+    color: #E53E3E; /* Changed */
     margin-left: 0;
     padding-left: 1rem;
 }
@@ -406,16 +454,16 @@ a:hover {
     margin-top: 2rem;
 }
 
-/* Footer (site-footer) - Your original fixed footer CSS */
+/* --- Footer --- */
 .site-footer {
-    background-color: #2f4f4f;
-    color: #81dbb8;
+    background-color: #2D3748; /* Changed */
+    color: #4FD1C5; /* Changed */
     text-align: center;
     margin-top: 40px;
     font-size: 0.85rem;
-    border-top: 1px solid #555;
-    position: fixed;
-    bottom: 0;
+    border-top: 1px solid #4A5568; /* Changed */
+    bottom: auto;
+    position: static;
     width: 100%;
     padding: 15px 0;
     z-index: 1000;
@@ -426,13 +474,13 @@ a:hover {
     font-size: 0.85rem;
 }
 
-/* Select Multiple */
+/* --- Select Multiple --- */
 select[multiple] {
     height: auto;
     min-height: 100px;
-    background-color: #1a3232;
-    color: #e0e0e0;
-    border: 1px solid #555;
+    background-color: #1A202C; /* Changed */
+    color: #E2E8F0; /* Changed */
+    border: 1px solid #4A5568; /* Changed */
     border-radius: 5px;
     padding: 0.5rem;
     font-size: 1rem;
@@ -442,11 +490,22 @@ select[multiple] {
 
 select[multiple]:focus {
     outline: none;
-    border-color: #81dbb8;
-    box-shadow: 0 0 0 3px rgba(129, 219, 184, 0.3);
+    border-color: #4FD1C5; /* Changed */
+    box-shadow: 0 0 0 3px rgba(79, 209, 197, 0.3); /* Changed */
 }
 
 /* Basic styling for options if needed */
 select[multiple] option {
     padding: 5px;
+}
+
+/* Prevent resizing for all form textareas */
+form textarea {
+    resize: none;
+}
+
+label, input, textarea, select {
+    display: block;
+    width: 100%;  /* optional */
+    margin-bottom: 1rem;  /* spacing between fields */
 }
