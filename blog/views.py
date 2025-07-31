@@ -1,7 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Post
 from django.shortcuts import get_object_or_404
 from django.contrib.auth.decorators import login_required
+from . import forms
 
 # Create your views here.
 
@@ -15,4 +16,11 @@ def post_detail(request, slug):
 
 @login_required(login_url="/accounts/login/")
 def post_new(request):
-    return render(request, "blog/post_new.html")
+    if request.method == "POST":
+        form = forms.CreatePost(request.POST) #add request.FILES if images are included
+        if form.is_valid():
+            form.save(user=request.user)
+            return redirect('blog:list')
+    else:
+        form = forms.CreatePost()
+    return render(request, "blog/post_new.html", {'form': form})

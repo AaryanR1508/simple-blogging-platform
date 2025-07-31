@@ -12,7 +12,7 @@ def register_view(request):
             return redirect("blog:list")
     else:
         form = UserCreationForm()
-    return render(request, 'accounts/register.html', {"form": form})
+    return render(request, 'accounts/register.html/', {"form": form})
 
 def login_view(request):
     if request.method == "POST":
@@ -25,7 +25,7 @@ def login_view(request):
                 return redirect("blog:list")
     else:
         form = AuthenticationForm()
-    return render(request, 'accounts/login.html', {"form": form})
+    return render(request, 'accounts/login.html/', {"form": form})
 
 def logout_view(request):
     if request.method == "POST":
