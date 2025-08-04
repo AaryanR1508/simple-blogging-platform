@@ -12,7 +12,6 @@ A feature-rich web application built with Django, designed to empower users to e
 * **Intuitive Tag Filtering:** Easily filter and display posts based on specific tags.
 * **Efficient Pagination:** Ensures smooth Browse by loading posts in manageable batches, preventing information overload.
 * **Secure User Authentication:** Implements robust user Login, Logout, and Registration capabilities, leveraging Django's built-in security.
-* **Extendable User Profiles:** Allows for custom user profiles beyond default Django fields, supporting additions like profile pictures and bios.
 * **Markdown Support:** Write and format blog posts using the versatile Markdown syntax for rich content creation.
 * **Interactive Comment System:** Enables authenticated users to engage with content by posting comments on blog entries.
 * **Personalized User Dashboards:** Provides users with a dedicated "My Posts" view to conveniently manage (edit/delete) only their own published content.

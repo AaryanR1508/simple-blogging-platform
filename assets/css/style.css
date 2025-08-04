@@ -1,0 +1,554 @@
+/* Universal Styles */
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Body & Base Typography */
+body {
+    min-height: 100vh;
+    background-color: #1A202C; 
+    color: #E2E8F0; 
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    height: 100%;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Roboto Slab', serif;
+    color: #4FD1C5; 
+    margin-top: 1.5em;
+    margin-bottom: 0.8em;
+}
+
+h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    text-align: center;
+    margin-top: 2.5rem;
+    margin-bottom: 2rem;
+    letter-spacing: 0.05em;
+}
+
+h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    color: #FFFFFF; /* Kept white for high impact, can be changed to #E2E8F0 */
+}
+
+/* Paragraphs */
+p {
+    font-size: 1rem;
+    padding: 0;
+    margin-bottom: 1em;
+}
+
+/* Main Content Area Container */
+main {
+    padding: 1rem 0;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex: 1;
+}
+
+/* --- Navigation Bar --- */
+nav {
+    position: relative;
+    background-color: #2D3748; 
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* Style for the "Simple Blog" brand/logo */
+.brand {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #4FD1C5; 
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.brand img {
+    vertical-align: middle;
+}
+
+/* Container for Posts, New Post links */
+.nav-links {
+    display: flex;
+    gap: 25px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Container for Login/Logout/Register links */
+.auth-links {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Styling for all common navigation links (Posts, New Post, Register, Login) */
+.nav-links a,
+.auth-links a {
+    color: #4FD1C5; 
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover,
+.auth-links a:hover {
+    color: #81E6D9; 
+}
+
+/* Style for the separator " | " */
+.auth-divider {
+    color: #A0AEC0; 
+    font-size: 1.1rem;
+}
+
+/* Specific style for logout button */
+.logout-button {
+    font-size: 1.1rem;
+    color: #4FD1C5; 
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.logout-button:hover {
+    color: #81E6D9; 
+    background-color: rgba(79, 209, 197, 0.1); 
+}
+
+/* Posts Grid */
+.posts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.post {
+    background: #2D3748; 
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 400px;
+    word-wrap: break-word; /* Ensures long words break */
+    overflow-wrap: break-word; /* Modern version of word-wrap */
+    white-space: normal; /* Allows text to wrap */
+}
+
+/* Link Styling (General) */
+a {
+    text-decoration: none;
+    color: #4FD1C5; 
+    font-size: 1rem;
+    transition: color 0.3s ease, opacity 0.3s ease;
+}
+
+a:hover {
+    color: #81E6D9; 
+    opacity: 1;
+}
+
+/* "Read More" link within posts */
+.post a {
+    font-size: 1rem;
+    margin-top: auto;
+    font-weight: 500;
+}
+
+/* Tag Styling */
+.tag {
+    background-color: rgba(79, 209, 197, 0.15); 
+    color: #4FD1C5; 
+    padding: 6px 12px;
+    margin-right: 8px;
+    margin-bottom: 8px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    text-transform: lowercase;
+    font-weight: 600;
+    width: fit-content;
+}
+
+.tag a {
+    color: inherit;
+    font-size: inherit;
+    text-decoration: none;
+}
+
+.tags-container {
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-top: 2px;
+    padding-bottom: 15px;
+}
+
+/* Post Meta (Date | By Author) */
+.post-meta {
+    font-size: 0.85rem;
+    color: #A0AEC0; 
+    margin-bottom: 1rem;
+    padding-left: 0;
+}
+
+/* Single Post Page Container */
+.post-container {
+    width: 1200px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #2D3748; 
+    color: #E2E8F0; 
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+.post-title {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: #FFFFFF;
+    font-weight: 700;
+}
+
+.post-body {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    word-spacing: 1px;
+    word-wrap: break-word; /* Ensures long words break */
+    white-space: normal; /* Allows text to wrap */
+    font-family: inherit;
+    overflow: visible;
+}
+
+.post-body p {
+    margin-bottom: 1em;
+}
+
+/* Banner (if it's an image or similar) */
+.banner {
+    display: block;
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    margin: 20px auto;
+    border-radius: 8px;
+}
+
+.active-tag-banner {
+    margin-bottom: 20px;
+    padding: 10px 16px;
+    background-color: #2D3748; 
+    border-left: 5px solid #4FD1C5; 
+    border-radius: 6px;
+    color: #E2E8F0; 
+    font-size: 1.1em;
+}
+
+.clear-filter {
+    margin-left: 12px;
+    color: #E53E3E; 
+    font-size: 0.95em;
+    text-decoration: none;
+}
+
+.clear-filter:hover {
+    text-decoration: underline;
+}
+
+/* --- Comments --- */
+.comment-section {
+    margin-top: 40px;
+    border-top: 1px solid #4A5568; 
+    padding-top: 20px;
+}
+
+.comment {
+    background-color: #1A202C; 
+    padding: 15px 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.comment-author {
+    font-weight: bold;
+    color: #4FD1C5; 
+    margin-bottom: 6px;
+}
+
+.comment-body {
+    color: #E2E8F0; 
+    line-height: 1.6;
+}
+
+.comment-timestamp {
+    font-size: 0.85em;
+    color: #A0AEC0; 
+    margin-top: 8px;
+}
+
+.comment-form-section {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #4A5568; 
+}
+
+.comment-form-section h3 {
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.comment-input {
+    width: 100%;
+    background-color: #2D3748; 
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    color: #E2E8F0; 
+    font-size: 1em;
+    resize: none; /* Make comment body non-resizeable */
+    margin-bottom: 10px;
+}
+
+.comment-input::placeholder {
+    color: #A0AEC0; 
+}
+
+.comment-form-section button {
+    background-color: #4FD1C5; 
+    color: #1A202C; 
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.comment-form-section button:hover {
+    background-color: #38B2AC; /* Slightly darker teal for hover */
+}
+
+/* --- Forms --- */
+/* Prevent resizing for all form textareas */
+form textarea {
+    resize: none;
+}
+
+label, input, textarea, select {
+    display: block;
+    width: 100%;  /* optional */
+    margin-bottom: 1rem;  /* spacing between fields */
+}
+
+.form-with-validation {
+    font-size: 1rem;
+    padding: 2rem;
+    display: flex;
+    flex-flow: column;
+    gap: 1.5rem;
+    max-width: 600px;
+    background-color: #2D3748; 
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    margin: 40px auto;
+    color: #E2E8F0; 
+}
+
+.form-with-validation div {
+    display: flex;
+    flex-flow: column;
+    gap: 0.8rem;
+}
+
+.form-with-validation label {
+    font-weight: 600;
+    color: #4FD1C5; 
+}
+
+.form-with-validation input[type="text"],
+.form-with-validation input[type="password"],
+.form-with-validation input[type="email"],
+.form-with-validation textarea {
+    padding: 0.75rem 1rem;
+    background-color: #1A202C; 
+    border: 1px solid #4A5568; 
+    border-radius: 5px;
+    color: #E2E8F0; 
+    font-size: 1rem;
+    width: 100%;
+    max-width: 400px;
+}
+
+.form-with-validation input[type="text"]:focus,
+.form-with-validation input[type="password"]:focus,
+.form-with-validation input[type="email"]:focus,
+.form-with-validation textarea:focus {
+    outline: none;
+    border-color: #4FD1C5; 
+    box-shadow: 0 0 0 3px rgba(79, 209, 197, 0.3); 
+}
+
+.form-submit {
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    width: auto;
+    align-self: flex-start;
+    background-color: #4FD1C5; 
+    color: #1A202C; 
+    border: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.form-submit:hover {
+    background-color: #81E6D9; 
+    transform: translateY(-2px);
+}
+
+.helptext {
+    font-size: 0.9rem;
+    margin-left: 0;
+    color: #A0AEC0; 
+}
+
+.helptext ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.errorlist {
+    color: #E53E3E; 
+    margin-left: 0;
+    padding-left: 1rem;
+}
+
+.errorlist li::marker {
+    content: '🚨 ';
+}
+
+/* Logout (if it's a separate section, not button) */
+.logout {
+    display: block;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+/* --- Footer --- */
+.site-footer {
+    background-color: #2D3748; 
+    color: #4FD1C5; 
+    text-align: center;
+    margin-top: 40px;
+    font-size: 0.85rem;
+    border-top: 1px solid #4A5568; 
+    bottom: auto;
+    position: static;
+    width: 100%;
+    padding: 15px 0;
+    z-index: 1000;
+}
+
+.site-footer p {
+    margin: 0;
+    font-size: 0.85rem;
+}
+
+/* --- Select Multiple --- */
+select[multiple] {
+    height: auto;
+    min-height: 100px;
+    background-color: #1A202C; 
+    color: #E2E8F0; 
+    border: 1px solid #4A5568; 
+    border-radius: 5px;
+    padding: 0.5rem;
+    font-size: 1rem;
+    width: 100%;
+    max-width: 400px;
+}
+
+select[multiple]:focus {
+    outline: none;
+    border-color: #4FD1C5; 
+    box-shadow: 0 0 0 3px rgba(79, 209, 197, 0.3); 
+}
+
+/* Basic styling for options if needed */
+select[multiple] option {
+    padding: 5px;
+}
+
+/* Pagination Styles */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.6rem;
+    margin: 2rem auto 0;
+    flex-wrap: wrap;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.pagination a,
+.pagination span {
+    padding: 0.45rem 0.75rem;
+    border: 1px solid #2dd4bf; /* teal-ish border */
+    border-radius: 8px;
+    text-decoration: none;
+    color: #2dd4bf;
+    background-color: #1e293b; /* dark navy card bg */
+    transition: all 0.2s ease;
+    font-weight: 500;
+}
+
+.pagination a:hover {
+    background-color: #2dd4bf;
+    color: #0f172a;
+    font-weight: 600;
+}
+
+.pagination .current {
+    background-color: #2dd4bf;
+    color: #0f172a;
+    font-weight: bold;
+    pointer-events: none;
+    border-color: #2dd4bf;
+}
+
+.pagination a.disabled {
+    opacity: 0.4;
+    pointer-events: none;
+    border-style: dashed;
+}
