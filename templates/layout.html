@@ -28,6 +28,7 @@
         <a href="{% url 'blog:list' %}" title="Posts">Posts</a>
         {% if user.is_authenticated %}
             <a href="{% url 'blog:new-post' %}" title="New Post">New Post</a>
+            <a href="{% url 'blog:my-posts' %}" title="My Posts">My Posts</a>
         {% endif %}
     </div>
 

@@ -6,10 +6,17 @@ class CreatePost(forms.ModelForm):
         label="Tags (comma-separated)", required=False,
         widget=forms.TextInput(attrs={'placeholder': 'e.g. Django, Python, AI'})
     )
+    body = forms.CharField(
+    widget=forms.Textarea(attrs={
+        'placeholder': 'Write your post here using Markdown (e.g., **bold**, _italic_, `code`)',
+        'rows': 10,
+        'style': 'min-height: 200px;'}),
+    label="Post Content (Markdown supported)"
+    )
 
     class Meta:
         model = models.Post
-        fields = ['title', 'body', 'slug']
+        fields = ['title', 'slug', 'body']
 
     def save(self, commit=True, user=None):
         post = super().save(commit=False)
@@ -27,8 +34,8 @@ class CreatePost(forms.ModelForm):
             tag_objs.append(tag_obj)
 
         post.tags.set(tag_objs)
-        return post
-    
+        return post  
+
 class CreateComment(forms.ModelForm):
     class Meta:
         model = models.Comment
@@ -40,3 +47,6 @@ class CreateComment(forms.ModelForm):
                 'rows': 3,
             })
         }
+
+
+

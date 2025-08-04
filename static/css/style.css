@@ -13,8 +13,8 @@
 /* Body & Base Typography */
 body {
     min-height: 100vh;
-    background-color: #1A202C; /* Changed */
-    color: #E2E8F0; /* Changed */
+    background-color: #1A202C; 
+    color: #E2E8F0; 
     font-family: 'Open Sans', sans-serif;
     font-size: 1rem;
     line-height: 1.6;
@@ -24,7 +24,7 @@ body {
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Roboto Slab', serif;
-    color: #4FD1C5; /* Changed */
+    color: #4FD1C5; 
     margin-top: 1.5em;
     margin-bottom: 0.8em;
 }
@@ -64,7 +64,7 @@ main {
 /* --- Navigation Bar --- */
 nav {
     position: relative;
-    background-color: #2D3748; /* Changed */
+    background-color: #2D3748; 
     color: white;
     padding: 1rem 2rem;
     display: flex;
@@ -77,7 +77,7 @@ nav {
 .brand {
     font-size: 1.6rem;
     font-weight: 600;
-    color: #4FD1C5; /* Changed */
+    color: #4FD1C5; 
     text-decoration: none;
     display: flex;
     align-items: center;
@@ -107,7 +107,7 @@ nav {
 /* Styling for all common navigation links (Posts, New Post, Register, Login) */
 .nav-links a,
 .auth-links a {
-    color: #4FD1C5; /* Changed */
+    color: #4FD1C5; 
     text-decoration: none;
     font-size: 1.1rem;
     padding: 5px 0;
@@ -116,19 +116,19 @@ nav {
 
 .nav-links a:hover,
 .auth-links a:hover {
-    color: #81E6D9; /* Changed */
+    color: #81E6D9; 
 }
 
 /* Style for the separator " | " */
 .auth-divider {
-    color: #A0AEC0; /* Changed */
+    color: #A0AEC0; 
     font-size: 1.1rem;
 }
 
 /* Specific style for logout button */
 .logout-button {
     font-size: 1.1rem;
-    color: #4FD1C5; /* Changed */
+    color: #4FD1C5; 
     background-color: transparent;
     border: none;
     cursor: pointer;
@@ -138,8 +138,8 @@ nav {
 }
 
 .logout-button:hover {
-    color: #81E6D9; /* Changed */
-    background-color: rgba(79, 209, 197, 0.1); /* Changed */
+    color: #81E6D9; 
+    background-color: rgba(79, 209, 197, 0.1); 
 }
 
 /* Posts Grid */
@@ -153,7 +153,7 @@ nav {
 }
 
 .post {
-    background: #2D3748; /* Changed */
+    background: #2D3748; 
     padding: 25px;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.3);
@@ -169,14 +169,13 @@ nav {
 /* Link Styling (General) */
 a {
     text-decoration: none;
-    color: #4FD1C5; /* Changed */
+    color: #4FD1C5; 
     font-size: 1rem;
-    padding: 0;
     transition: color 0.3s ease, opacity 0.3s ease;
 }
 
 a:hover {
-    color: #81E6D9; /* Changed */
+    color: #81E6D9; 
     opacity: 1;
 }
 
@@ -189,8 +188,8 @@ a:hover {
 
 /* Tag Styling */
 .tag {
-    background-color: rgba(79, 209, 197, 0.15); /* Changed */
-    color: #4FD1C5; /* Changed */
+    background-color: rgba(79, 209, 197, 0.15); 
+    color: #4FD1C5; 
     padding: 6px 12px;
     margin-right: 8px;
     margin-bottom: 8px;
@@ -217,18 +216,18 @@ a:hover {
 /* Post Meta (Date | By Author) */
 .post-meta {
     font-size: 0.85rem;
-    color: #A0AEC0; /* Changed */
+    color: #A0AEC0; 
     margin-bottom: 1rem;
     padding-left: 0;
 }
 
 /* Single Post Page Container */
 .post-container {
-    max-width: 1200px;
+    width: 1200px;
     margin: 40px auto;
     padding: 30px;
-    background-color: #2D3748; /* Changed */
-    color: #E2E8F0; /* Changed */
+    background-color: #2D3748; 
+    color: #E2E8F0; 
     border-radius: 12px;
     box-shadow: 0 0 20px rgba(0,0,0,0.5);
 }
@@ -245,8 +244,9 @@ a:hover {
     line-height: 1.8;
     word-spacing: 1px;
     word-wrap: break-word; /* Ensures long words break */
-    overflow-wrap: break-word; /* Modern version of word-wrap */
     white-space: normal; /* Allows text to wrap */
+    font-family: inherit;
+    overflow: visible;
 }
 
 .post-body p {
@@ -266,16 +266,16 @@ a:hover {
 .active-tag-banner {
     margin-bottom: 20px;
     padding: 10px 16px;
-    background-color: #2D3748; /* Changed */
-    border-left: 5px solid #4FD1C5; /* Changed */
+    background-color: #2D3748; 
+    border-left: 5px solid #4FD1C5; 
     border-radius: 6px;
-    color: #E2E8F0; /* Changed */
+    color: #E2E8F0; 
     font-size: 1.1em;
 }
 
 .clear-filter {
     margin-left: 12px;
-    color: #E53E3E; /* Changed */
+    color: #E53E3E; 
     font-size: 0.95em;
     text-decoration: none;
 }
@@ -287,12 +287,12 @@ a:hover {
 /* --- Comments --- */
 .comment-section {
     margin-top: 40px;
-    border-top: 1px solid #4A5568; /* Changed */
+    border-top: 1px solid #4A5568; 
     padding-top: 20px;
 }
 
 .comment {
-    background-color: #1A202C; /* Changed */
+    background-color: #1A202C; 
     padding: 15px 20px;
     margin-bottom: 20px;
     border-radius: 10px;
@@ -301,25 +301,25 @@ a:hover {
 
 .comment-author {
     font-weight: bold;
-    color: #4FD1C5; /* Changed */
+    color: #4FD1C5; 
     margin-bottom: 6px;
 }
 
 .comment-body {
-    color: #E2E8F0; /* Changed */
+    color: #E2E8F0; 
     line-height: 1.6;
 }
 
 .comment-timestamp {
     font-size: 0.85em;
-    color: #A0AEC0; /* Changed */
+    color: #A0AEC0; 
     margin-top: 8px;
 }
 
 .comment-form-section {
     margin-top: 30px;
     padding-top: 20px;
-    border-top: 1px solid #4A5568; /* Changed */
+    border-top: 1px solid #4A5568; 
 }
 
 .comment-form-section h3 {
@@ -329,23 +329,23 @@ a:hover {
 
 .comment-input {
     width: 100%;
-    background-color: #2D3748; /* Changed */
+    background-color: #2D3748; 
     border: none;
     padding: 12px;
     border-radius: 8px;
-    color: #E2E8F0; /* Changed */
+    color: #E2E8F0; 
     font-size: 1em;
     resize: none; /* Make comment body non-resizeable */
     margin-bottom: 10px;
 }
 
 .comment-input::placeholder {
-    color: #A0AEC0; /* Changed */
+    color: #A0AEC0; 
 }
 
 .comment-form-section button {
-    background-color: #4FD1C5; /* Changed */
-    color: #1A202C; /* Changed */
+    background-color: #4FD1C5; 
+    color: #1A202C; 
     padding: 8px 16px;
     border: none;
     border-radius: 6px;
@@ -359,6 +359,17 @@ a:hover {
 }
 
 /* --- Forms --- */
+/* Prevent resizing for all form textareas */
+form textarea {
+    resize: none;
+}
+
+label, input, textarea, select {
+    display: block;
+    width: 100%;  /* optional */
+    margin-bottom: 1rem;  /* spacing between fields */
+}
+
 .form-with-validation {
     font-size: 1rem;
     padding: 2rem;
@@ -366,11 +377,11 @@ a:hover {
     flex-flow: column;
     gap: 1.5rem;
     max-width: 600px;
-    background-color: #2D3748; /* Changed */
+    background-color: #2D3748; 
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.3);
     margin: 40px auto;
-    color: #E2E8F0; /* Changed */
+    color: #E2E8F0; 
 }
 
 .form-with-validation div {
@@ -381,7 +392,7 @@ a:hover {
 
 .form-with-validation label {
     font-weight: 600;
-    color: #4FD1C5; /* Changed */
+    color: #4FD1C5; 
 }
 
 .form-with-validation input[type="text"],
@@ -389,10 +400,10 @@ a:hover {
 .form-with-validation input[type="email"],
 .form-with-validation textarea {
     padding: 0.75rem 1rem;
-    background-color: #1A202C; /* Changed */
-    border: 1px solid #4A5568; /* Changed */
+    background-color: #1A202C; 
+    border: 1px solid #4A5568; 
     border-radius: 5px;
-    color: #E2E8F0; /* Changed */
+    color: #E2E8F0; 
     font-size: 1rem;
     width: 100%;
     max-width: 400px;
@@ -403,8 +414,8 @@ a:hover {
 .form-with-validation input[type="email"]:focus,
 .form-with-validation textarea:focus {
     outline: none;
-    border-color: #4FD1C5; /* Changed */
-    box-shadow: 0 0 0 3px rgba(79, 209, 197, 0.3); /* Changed */
+    border-color: #4FD1C5; 
+    box-shadow: 0 0 0 3px rgba(79, 209, 197, 0.3); 
 }
 
 .form-submit {
@@ -412,8 +423,8 @@ a:hover {
     border-radius: 8px;
     width: auto;
     align-self: flex-start;
-    background-color: #4FD1C5; /* Changed */
-    color: #1A202C; /* Changed */
+    background-color: #4FD1C5; 
+    color: #1A202C; 
     border: none;
     font-size: 1.1rem;
     font-weight: 600;
@@ -422,14 +433,14 @@ a:hover {
 }
 
 .form-submit:hover {
-    background-color: #81E6D9; /* Changed */
+    background-color: #81E6D9; 
     transform: translateY(-2px);
 }
 
 .helptext {
     font-size: 0.9rem;
     margin-left: 0;
-    color: #A0AEC0; /* Changed */
+    color: #A0AEC0; 
 }
 
 .helptext ul {
@@ -438,7 +449,7 @@ a:hover {
 }
 
 .errorlist {
-    color: #E53E3E; /* Changed */
+    color: #E53E3E; 
     margin-left: 0;
     padding-left: 1rem;
 }
@@ -456,12 +467,12 @@ a:hover {
 
 /* --- Footer --- */
 .site-footer {
-    background-color: #2D3748; /* Changed */
-    color: #4FD1C5; /* Changed */
+    background-color: #2D3748; 
+    color: #4FD1C5; 
     text-align: center;
     margin-top: 40px;
     font-size: 0.85rem;
-    border-top: 1px solid #4A5568; /* Changed */
+    border-top: 1px solid #4A5568; 
     bottom: auto;
     position: static;
     width: 100%;
@@ -478,9 +489,9 @@ a:hover {
 select[multiple] {
     height: auto;
     min-height: 100px;
-    background-color: #1A202C; /* Changed */
-    color: #E2E8F0; /* Changed */
-    border: 1px solid #4A5568; /* Changed */
+    background-color: #1A202C; 
+    color: #E2E8F0; 
+    border: 1px solid #4A5568; 
     border-radius: 5px;
     padding: 0.5rem;
     font-size: 1rem;
@@ -490,8 +501,8 @@ select[multiple] {
 
 select[multiple]:focus {
     outline: none;
-    border-color: #4FD1C5; /* Changed */
-    box-shadow: 0 0 0 3px rgba(79, 209, 197, 0.3); /* Changed */
+    border-color: #4FD1C5; 
+    box-shadow: 0 0 0 3px rgba(79, 209, 197, 0.3); 
 }
 
 /* Basic styling for options if needed */
@@ -499,13 +510,45 @@ select[multiple] option {
     padding: 5px;
 }
 
-/* Prevent resizing for all form textareas */
-form textarea {
-    resize: none;
+/* Pagination Styles */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.6rem;
+    margin: 2rem auto 0;
+    flex-wrap: wrap;
+    font-family: 'Segoe UI', sans-serif;
 }
 
-label, input, textarea, select {
-    display: block;
-    width: 100%;  /* optional */
-    margin-bottom: 1rem;  /* spacing between fields */
+.pagination a,
+.pagination span {
+    padding: 0.45rem 0.75rem;
+    border: 1px solid #2dd4bf; /* teal-ish border */
+    border-radius: 8px;
+    text-decoration: none;
+    color: #2dd4bf;
+    background-color: #1e293b; /* dark navy card bg */
+    transition: all 0.2s ease;
+    font-weight: 500;
+}
+
+.pagination a:hover {
+    background-color: #2dd4bf;
+    color: #0f172a;
+    font-weight: 600;
+}
+
+.pagination .current {
+    background-color: #2dd4bf;
+    color: #0f172a;
+    font-weight: bold;
+    pointer-events: none;
+    border-color: #2dd4bf;
+}
+
+.pagination a.disabled {
+    opacity: 0.4;
+    pointer-events: none;
+    border-style: dashed;
 }

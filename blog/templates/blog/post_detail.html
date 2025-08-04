@@ -14,7 +14,7 @@
   {% endfor %}
   </p>
   <div class="post-body">
-    {{ post.body|linebreaks }}
+  {{ post_html|safe }}
   </div>
   <div class="comment-form-section">
     <h3>Leave a Comment</h3>
