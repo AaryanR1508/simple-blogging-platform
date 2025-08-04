@@ -1,6 +1,0 @@
-services:
-  - type: web
-    name: simple-blog
-    runtime: python
-    plan: free
-    startCommand: gunicorn core.wsgi:application
