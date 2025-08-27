@@ -1,4 +1,9 @@
 *.py linguist-language=Python
-/static/vendor/* linguist-vendored
-/node_modules/* linguist-vendored
+*.css linguist-vendored
+*.scss linguist-vendored
+*.js linguist-vendored
+*.ts linguist-vendored
+*.html linguist-vendored
+/static/* linguist-vendored
 /media/* linguist-vendored
+/node_modules/* linguist-vendored
